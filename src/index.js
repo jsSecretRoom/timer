@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function(){
             timeInterval = setInterval(updateClock, 1000);
 
             updateClock();
-            const t = getTimeRemaining(endtime);
 
             function updateClock() {
                 const [days, hours, minutes, seconds] = getSelectorsTime;
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
         getTimSelectors(dataLine, timer, ...time);
         
         function getTimeRemaining(endtime) {
+            
             const t = Date.parse(endtime) - Date.parse(new Date()),
                 seconds = Math.floor( (t/1000) % 60 ),
                 minutes = Math.floor( (t/1000/60) % 60 ),
